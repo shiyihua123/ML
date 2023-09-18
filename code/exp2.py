@@ -183,14 +183,14 @@ if __name__ == '__main__':
     # 真实的θ
     print("θ0=2||θ1=1||θ2=5")
     # 批量梯度下降法
-    train1(copy.deepcopy(Theta),epochs,alpha,X_data,Y_data)
+    # train1(copy.deepcopy(Theta),epochs,alpha,X_data,Y_data)
     # 随机梯度下降法
     # train2(copy.deepcopy(Theta),epochs,alpha,X_data,Y_data)
     # 小批量梯度下降法
     # train3(copy.deepcopy(Theta),epochs,alpha,X_data,Y_data,batch=50)
 
 
-    print("213")
+    # print("213")
 
 
     plt.show()
