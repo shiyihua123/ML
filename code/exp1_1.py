@@ -10,7 +10,7 @@ def f_x(x):
     return (x-1)**2
 # 导函数
 def x_grad(x):
-    return 2*x-4
+    return 2*(x-1)
 def exp1(alpha):
     # 训练批次
     epoch = 100
