@@ -18,3 +18,5 @@ x0 = -0.5
 for e in range(epochs):
     x0 = x0-alpha*x_grad(x0)
 print(x0)
+
+
