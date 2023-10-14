@@ -54,8 +54,8 @@ def generate_data(num_feature, simple_num):
     df = pd.DataFrame(dataset, columns=columns_x)
     df_Theta = pd.DataFrame(Theta, columns=columns_Theta)
     # 保存到本地excel
-    df.to_excel("../data/dataset.xlsx", index=False)
-    df_Theta.to_excel("../data/dataset_Theta.xlsx", index=False)
+    df.to_excel("../data/new_dataset.xlsx", index=False)
+    df_Theta.to_excel("../data/new_dataset_Theta.xlsx", index=False)
 
 def readdata(path):
     df = pd.read_excel(path)
