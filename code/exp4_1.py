@@ -90,24 +90,24 @@ if __name__ == "__main__":
     temp = np.ones([1, simple_num])
     # 训练超参数
     epochs = 1000
-    Alpha = 1e-1
+    Alpha = 3e-3
     for e in range(1, epochs+1):
         epochs += 1
         h = sigmoid(Theta*X.T)
         loss = np.multiply(Y, np.log(h)) + np.multiply(1-Y, np.log(1-h))
         loss = (loss * temp.T)/simple_num
-        if e % 100 == 0:
-            # 有时候损失会超级大，因为h会跟接近0，log出来就非常大，以至于警告报错
-            print("epoch：", e, "loss：", loss.item())
+        # if e % 100 == 0:
+        # 有时候损失会超级大，因为h会跟接近0，log出来就非常大，以至于警告报错
+        print("epoch：", e, "loss：", loss.item())
 
-            # 西塔因为训练出来的时候会带有倍数，所以需要采用归一化来比较，这也是逻辑回归里sigmoid函数导致的原因
-            Theta_normalized = Theta / np.linalg.norm(Theta)
-            Theta_true_normalized = Theta_true / np.linalg.norm(Theta_true)
-            # 计算余弦相似度，用该方法来比较参数时候很类似
-            cosine_similarity = np.dot(Theta_normalized, Theta_true_normalized) / (
-                        np.linalg.norm(Theta_normalized) * np.linalg.norm(Theta_true_normalized))
-            print(cosine_similarity)
-            print("-"*100)
+        # # 西塔因为训练出来的时候会带有倍数，所以需要采用归一化来比较，这也是逻辑回归里sigmoid函数导致的原因
+        # Theta_normalized = Theta / np.linalg.norm(Theta)
+        # Theta_true_normalized = Theta_true / np.linalg.norm(Theta_true)
+        # # 计算余弦相似度，用该方法来比较参数时候很类似
+        # cosine_similarity = np.dot(Theta_normalized, Theta_true_normalized) / (
+        #             np.linalg.norm(Theta_normalized) * np.linalg.norm(Theta_true_normalized))
+        # print(cosine_similarity)
+        print("-"*100)
 
         # 用所有训练样本来更新梯度
         Theta = Theta + Alpha * (Y - h) * X
